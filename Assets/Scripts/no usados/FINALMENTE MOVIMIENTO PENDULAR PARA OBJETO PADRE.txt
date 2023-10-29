@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovimientoPendulo : MonoBehaviour
+{
+    public float amplitud = 2.0f;  // Define la amplitud del movimiento (distancia desde el centro)
+    public float frecuencia = 1.0f; // Define la frecuencia de oscilación
+
+    private Vector3 startPosition;
+
+    void Start()
+    {
+        startPosition = transform.position;
+    }
+
+    void Update()
+    {
+        // Calcula el desplazamiento horizontal usando una función senoidal
+        float desplazamientoX = Mathf.Sin(Time.time * frecuencia) * amplitud;
+
+        // Aplica el desplazamiento al objeto
+        transform.position = startPosition + new Vector3(desplazamientoX, 0, 0);
+    }
+}
