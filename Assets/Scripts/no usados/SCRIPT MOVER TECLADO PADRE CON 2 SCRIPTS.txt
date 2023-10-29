@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovimientoConHijo : MonoBehaviour
+{
+    public float velocidad = 2.0f;
+
+    void Update()
+    {
+        float movimientoHorizontal = Input.GetAxis("Horizontal");
+        float movimientoVertical = Input.GetAxis("Vertical");
+
+        Vector3 movimiento = new Vector3(movimientoHorizontal, movimientoVertical, 0) * velocidad * Time.deltaTime;
+
+        transform.Translate(movimiento);
+
+        // Si deseas aplicar fuerza, puedes usar Rigidbody2D en lugar de transform.Translate
+        // Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        // rb.velocity = new Vector2(movimientoHorizontal, movimientoVertical) * velocidad;
+    }
+}

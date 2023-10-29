@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MovimientoPingPong : MonoBehaviour
+{
+    public float velocidad = 2.0f;
+    public float distanciaMaxima = 5.0f;
+
+    void Update()
+    {
+        // Calcula el desplazamiento horizontal usando Mathf.PingPong
+        float movimiento = Mathf.PingPong(Time.time * velocidad, distanciaMaxima * 2) - distanciaMaxima;
+
+        // Aplica el desplazamiento al objeto
+        transform.position = new Vector3(movimiento, transform.position.y, transform.position.z);
+    }
+}
