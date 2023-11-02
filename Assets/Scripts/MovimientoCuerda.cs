@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoHookRope : MonoBehaviour
+public class MovimientoCuerda : MonoBehaviour
 {
     public float velocidadHorizontal = 2.0f;
     public float distanciaMaxima = 5.0f;
